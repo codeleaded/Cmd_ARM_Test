@@ -1,8 +1,8 @@
 .global _start
 _start:
-    mov x0, 1          // file descriptor stdout
-    ldr x1, =msg       // address of message
-    ldr x2, =len       // length of message
+    mov x0, 1          // stdout
+    ldr x1, =msg       // Adresse der Nachricht
+    mov x2, 12         // Länge der Nachricht
     mov x8, 64         // syscall write
     svc 0
 
@@ -12,4 +12,3 @@ _start:
 
 .data
 msg: .ascii "Hello ARM64\n"
-len: .word 12
